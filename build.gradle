@@ -40,10 +40,10 @@ dependencies {
 
 sonar {
   properties {
-    property "sonar.projectKey", "IvanPizarroQ_microservicio-java"
+    property "sonar.projectKey", "IvanPizarroQ_final-lab"
     property "sonar.organization", "ivanpizarroq"
     property "sonar.host.url", "https://sonarcloud.io/"
-    property "sonar.projectName", "microservicio-java"
+    property "sonar.projectName", "final-lab"
   }
 }
 
