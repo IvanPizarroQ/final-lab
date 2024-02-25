@@ -20,17 +20,13 @@ jobs:
           chmod +x gradlew 
           ./gradlew build 
           ls -ltr
-      - name: Set up JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: '10'
+          
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4.0.0
+        with: 
+          java-version: 17
+          distribution: 'temurin'
 
-      - name: Cache SonarQube packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
           
       - name: SonarCloud Analysis
         run: |
