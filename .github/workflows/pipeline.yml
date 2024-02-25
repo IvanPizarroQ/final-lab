@@ -82,7 +82,7 @@ jobs:
         docker pull ivanpizarroq/final-lab:latest
     - name: Despliegue Aplicaion
       run: |
-        docker run -p 8085:8085 --name final-lab-deploy -d ivanpizarroq/final-lab:latest 
+        docker run -p 8081:80 --name final-lab-deploy -d ivanpizarroq/final-lab:latest 
 
     - name: Sleep
       run: | 
@@ -95,6 +95,6 @@ jobs:
 
     - name: OWASP ZAP Scan
       run: |
-        docker run -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8085
+        docker run -t ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:80
 
 
