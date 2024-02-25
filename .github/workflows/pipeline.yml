@@ -57,6 +57,12 @@ jobs:
         run: | 
           docker build --tag ivanpizarroq/final-lab:latest .
           docker images
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ivanpizarroq/final-lab:latest'
+          format: 'table'
+          #exit-code: 1 PARAMETRO PARA QUIEBRE DE PIPELINE 
 
       - name: Docker Push
         run: |
