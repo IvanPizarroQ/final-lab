@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: final-lab
+  labels:
+    app: final-lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: final-lab
+  template:
+    metadata:
+      labels:
+        app: final-lab
+    spec:
+      containers:
+      - name: final-lab
+        image: ivanpizarroq/final-lab:latest
+        ports:
+        - containerPort: 8085
