@@ -79,10 +79,10 @@ jobs:
     #    Set-ExecutionPolicy Unrestricted
     - name: Pull de la Imagen Docker
       run: |
-        docker pull ivanpizarroq/final-lab:latest
+        sudo docker pull ivanpizarroq/final-lab:latest
     - name: Despliegue Aplicaion
       run: |
-        docker run -p 8085:8085 --name final-lab-deploy -d ivanpizarroq/final-lab:latest
+        sudo docker run -p 8085:8085 --name final-lab-deploy -d ivanpizarroq/final-lab:latest
 
     - name: Sleep
       run: | 
