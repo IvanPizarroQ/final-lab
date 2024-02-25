@@ -73,10 +73,13 @@ jobs:
     needs: build
     steps: 
 
-    - uses: actions/checkout@v3
-    - name: Set PowerShell Execution Policy
+    #- uses: actions/checkout@v3
+    #- name: Set PowerShell Execution Policy
+    #  run: |
+    #    Set-ExecutionPolicy Unrestricted
+    - name: Pull de la Imagen Docker
       run: |
-        Set-ExecutionPolicy Unrestricted
+        docker pull ivanpizarroq/final-lab:latest
     - name: Despliegue Aplicaion
       run: |
         docker run -p 8085:8085 --name final-lab-deploy -d ivanpizarroq/final-lab:latest
